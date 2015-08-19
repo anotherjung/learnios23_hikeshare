@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yNX-ko-rL6">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera-->
+        <scene sceneID="rox-JZ-kIA">
+            <objects>
+                <viewController id="dww-sz-gYS" customClass="CameraViewController" customModule="HikeShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8et-w4-BhE"/>
+                        <viewControllerLayoutGuide type="bottom" id="CoR-lU-q6u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qxQ-E0-r4S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIi-Sj-lqP">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kwA-ND-aER">
+                                <rect key="frame" x="445" y="407" width="135" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="2e4-GE-Xev"/>
+                                    <constraint firstAttribute="height" constant="128" id="l0l-zd-QvV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6u-TO-2G1">
+                                <rect key="frame" x="257" y="449" width="86" height="86"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="g6d-SS-e7y"/>
+                                    <constraint firstAttribute="height" constant="86" id="zCl-vL-C6y"/>
+                                </constraints>
+                                <state key="normal" title="Snap">
+                                    <color key="titleColor" red="0.99215692280000001" green="0.98039221759999995" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didPressTakePhoto:" destination="dww-sz-gYS" eventType="touchUpInside" id="TYF-F1-hN0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xIi-Sj-lqP" secondAttribute="trailing" constant="-20" id="1b3-wW-JcN"/>
+                            <constraint firstItem="v6u-TO-2G1" firstAttribute="centerX" secondItem="qxQ-E0-r4S" secondAttribute="centerX" id="6Ab-5c-kwP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kwA-ND-aER" secondAttribute="trailing" id="EzA-tC-Y9o"/>
+                            <constraint firstItem="CoR-lU-q6u" firstAttribute="top" secondItem="kwA-ND-aER" secondAttribute="bottom" constant="16" id="GDD-tn-rpv"/>
+                            <constraint firstAttribute="bottom" secondItem="xIi-Sj-lqP" secondAttribute="bottom" id="Ku4-RX-2bQ"/>
+                            <constraint firstItem="xIi-Sj-lqP" firstAttribute="leading" secondItem="qxQ-E0-r4S" secondAttribute="leading" id="OHO-6F-Jsg"/>
+                            <constraint firstAttribute="trailing" secondItem="xIi-Sj-lqP" secondAttribute="trailing" id="dwE-ry-4cN"/>
+                            <constraint firstItem="xIi-Sj-lqP" firstAttribute="centerY" secondItem="qxQ-E0-r4S" secondAttribute="centerY" id="hHv-fE-UEP"/>
+                            <constraint firstItem="xIi-Sj-lqP" firstAttribute="top" secondItem="8et-w4-BhE" secondAttribute="bottom" id="lnb-lX-dYw"/>
+                            <constraint firstItem="xIi-Sj-lqP" firstAttribute="centerX" secondItem="qxQ-E0-r4S" secondAttribute="centerX" id="qp2-Q9-w9R"/>
+                            <constraint firstItem="v6u-TO-2G1" firstAttribute="top" secondItem="xIi-Sj-lqP" secondAttribute="bottom" constant="-151" id="u47-Jq-me6"/>
+                            <constraint firstItem="xIi-Sj-lqP" firstAttribute="leading" secondItem="qxQ-E0-r4S" secondAttribute="leadingMargin" constant="-20" id="xo5-dE-mWZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Camera" id="gzk-xd-UGI"/>
+                    <connections>
+                        <outlet property="capturedImage" destination="kwA-ND-aER" id="LfZ-hY-pMI"/>
+                        <outlet property="previewView" destination="xIi-Sj-lqP" id="AYx-4p-4XS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1P9-QU-hv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="227"/>
+        </scene>
+        <!--Mission Peak Map-->
+        <scene sceneID="32q-9W-cfE">
+            <objects>
+                <viewController id="G00-wc-X2f" customClass="MapViewController" customModule="HikeShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JXU-sf-hEz"/>
+                        <viewControllerLayoutGuide type="bottom" id="5TF-Zv-HKH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="daf-AJ-ptP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-kQ-yLa">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mission Peak Map" id="yJZ-FG-1CI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cH-rX-gtp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="-434"/>
+        </scene>
+        <!--HikeShare-->
+        <scene sceneID="oJu-DK-vsv">
+            <objects>
+                <tabBarController title="HikeShare" id="yNX-ko-rL6" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="AnP-QY-du8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Hbr-PR-dTn" kind="relationship" relationship="viewControllers" id="j8n-y1-PmB"/>
+                        <segue destination="7eh-KN-FNG" kind="relationship" relationship="viewControllers" id="zOI-24-2xm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBi-2b-DGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-748" y="-103"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="vFB-Qr-DMx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hbr-PR-dTn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="CED-xM-HUD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UPX-dw-XYu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G00-wc-X2f" kind="relationship" relationship="rootViewController" id="ohf-qo-Xcd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zui-Oh-Grb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="-434"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="Tii-Sn-XnS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7eh-KN-FNG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Camera" id="Lh4-7X-PEg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jln-hw-Tlg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dww-sz-gYS" kind="relationship" relationship="rootViewController" id="hWL-qz-GXN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ET3-Jc-UJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="227"/>
+        </scene>
+    </scenes>
+</document>
