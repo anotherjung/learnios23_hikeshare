@@ -34,6 +34,17 @@ class MapViewController: UIViewController, UIScrollViewDelegate {
         
         setZoomScale()
         setupGestureRecognizer()
+        
+        
+        //gps notification
+        let noti:UILocalNotification = UILocalNotification()
+        //noti.category = "First_Cate"
+        noti.alertBody = "Photo Time"
+        //noti.regionTriggersOnce = true
+        noti.soundName = UILocalNotificationDefaultSoundName
+        
+        noti.fireDate = NSDate(timeIntervalSinceNow: 10)
+        UIApplication.sharedApplication().scheduleLocalNotification(noti)
 
     }
 
